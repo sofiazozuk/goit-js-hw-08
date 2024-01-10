@@ -1,0 +1,25 @@
+ul {
+    list-style-type: none;
+  }
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; 
+  }
+  
+  .gallery-item {
+    flex: 0 0 calc(33.333% - 20px); 
+    box-sizing: border-box;
+  }
+  
+  .gallery-link {
+    display: block;
+  }
+  
+  .gallery-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; 
+  }
