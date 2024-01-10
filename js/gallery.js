@@ -66,25 +66,33 @@ const images = [
 
 
   const galleryContainer = document.querySelector('.gallery');
+
   const createGalleryItem = ({ preview, original, description }) => {
   const galleryItem = document.createElement('li');
   galleryItem.classList.add('gallery-item');
+
   const galleryLink = document.createElement('a');
   galleryLink.classList.add('gallery-link');
   galleryLink.href = original;
+
   const galleryImage = document.createElement('img');
   galleryImage.classList.add('gallery-image');
   galleryImage.src = preview;
   galleryImage.setAttribute('data-source', original);
   galleryImage.alt = description; 
+
+  galleryLink.appendChild(galleryImage);
+  galleryItem.appendChild(galleryLink);
+
+  galleryLink.addEventListener('click', (e) => {
+    e.preventDefault();
+  });
   return galleryItem;
 };
 
 const galleryItems = images.map(createGalleryItem);
 galleryContainer.append(...galleryItems); 
   
-    
 
 
-
-    
+  
